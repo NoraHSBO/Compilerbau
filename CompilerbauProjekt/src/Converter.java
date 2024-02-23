@@ -164,7 +164,12 @@ public class Converter{
             }
             else if(i+1==converterOutput.size()){
                 int currentValue = parseInt(current);
-                currentNumber = currentNumber + currentValue;
+                if (currentNumber >= currentValue) {
+                        currentNumber = currentNumber + currentValue;
+                }
+                else if(currentNumber < currentValue) {
+                        currentNumber = currentValue - currentNumber;
+                }
                 converterTokens.add(String.valueOf(currentNumber));
                 currentNumber = 0;
                 i++;
